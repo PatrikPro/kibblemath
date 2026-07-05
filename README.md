@@ -3,7 +3,7 @@
 A static, dependency-free site: 6 dog calculators + info pages. No build step,
 no backend, nothing to maintain. Hosting is free; your only cost is the domain.
 
-**Live at:** https://kibblemath.com
+**Live at:** https://www.kibblemath.com
 
 ## Preview locally (optional)
     cd kibblemath
