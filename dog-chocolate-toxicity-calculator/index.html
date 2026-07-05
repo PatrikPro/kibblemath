@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dog Chocolate Toxicity Calculator — How Much Chocolate Is Dangerous?</title>
+<meta name="description" content="Dog ate chocolate? Estimate the methylxanthine dose in mg/kg from chocolate type and amount, see the risk level, and know how urgently to contact your vet.">
+<link rel="canonical" href="https://www.kibblemath.com/dog-chocolate-toxicity-calculator/">
+<meta property="og:title" content="Dog Chocolate Toxicity Calculator">
+<meta property="og:description" content="Estimate the dose in mg/kg and how urgently to call the vet.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.kibblemath.com/dog-chocolate-toxicity-calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much chocolate is toxic to dogs?","acceptedAnswer":{"@type":"Answer","text":"Toxicity depends on the dose of methylxanthines (mainly theobromine) per kg of dog. Mild signs can appear around 20 mg/kg, serious cardiac signs around 40–60 mg/kg, and seizures above 60 mg/kg. Dark and baking chocolate are many times more dangerous than milk chocolate, and small dogs reach dangerous doses fastest."}},
+{"@type":"Question","name":"My dog ate chocolate — what should I do?","acceptedAnswer":{"@type":"Answer","text":"Work out the type and amount eaten, keep the packaging, and call your vet — immediately if it was dark or baking chocolate, the dog is small, or any symptoms are showing. Do not induce vomiting unless a vet tells you to. Symptoms typically appear within 6–12 hours."}},
+{"@type":"Question","name":"What are the symptoms of chocolate poisoning in dogs?","acceptedAnswer":{"@type":"Answer","text":"Early signs include vomiting, diarrhea, restlessness and increased thirst; more serious ones are racing heart, panting, tremors and, in severe cases, seizures. Because theobromine is metabolized slowly, signs can persist for a day or more — any of them warrant contacting a vet."}}
+]}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="KibbleMath home">
+      <svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="4.6" cy="10" rx="2" ry="2.5"/><ellipse cx="9.4" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="14.6" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="19.4" cy="10" rx="2" ry="2.5"/><path d="M12 11.2c-3.4 0-6.3 2.9-6.3 5.6 0 1.9 1.5 3.2 3.4 3.2 1.1 0 2-.5 2.9-.5s1.8.5 2.9.5c1.9 0 3.4-1.3 3.4-3.2 0-2.7-2.9-5.6-6.3-5.6z"/></svg>
+      <span>Kibble<b>Math</b></span>
+    </a>
+    <nav class="nav">
+      <a href="/#tools">All tools</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="tool-hero">
+  <div class="wrap">
+    <h1>Dog chocolate toxicity calculator</h1>
+    <p class="lede">Estimate the methylxanthine dose from what your dog ate and how urgently to act. <strong>If your dog is showing any symptoms, skip the calculator and call your vet now.</strong></p>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="wrap calc-grid">
+
+    <form class="card form-card" onsubmit="return false">
+      <label class="field" for="w">
+        <span class="field-label">Dog's weight</span>
+        <div class="input-row">
+          <input type="number" id="w" value="10" min="0.5" step="0.1" inputmode="decimal">
+          <div class="seg" role="group" aria-label="Weight unit">
+            <button type="button" class="seg-btn is-on" data-u="kg">kg</button>
+            <button type="button" class="seg-btn" data-u="lb">lb</button>
+          </div>
+        </div>
+      </label>
+
+      <label class="field" for="type">
+        <span class="field-label">Type of chocolate</span>
+        <select id="type">
+          <option value="0.1">White chocolate</option>
+          <option value="2.4" selected>Milk chocolate</option>
+          <option value="5.5">Dark chocolate (45–60% cocoa)</option>
+          <option value="9">Dark chocolate (70–85% cocoa)</option>
+          <option value="16">Baking / unsweetened chocolate</option>
+          <option value="26">Cocoa powder</option>
+        </select>
+        <span class="field-hint">Check the packaging — cocoa percentage matters a lot.</span>
+      </label>
+
+      <label class="field" for="amt">
+        <span class="field-label">Amount eaten (estimate high if unsure)</span>
+        <div class="input-row">
+          <input type="number" id="amt" value="50" min="0" step="1" inputmode="decimal">
+          <div class="seg" role="group" aria-label="Amount unit">
+            <button type="button" class="seg-btn is-on" data-a="g">g</button>
+            <button type="button" class="seg-btn" data-a="oz">oz</button>
+          </div>
+        </div>
+        <span class="field-hint">A typical chocolate bar is 90–100 g; one square ≈ 8–10 g.</span>
+      </label>
+    </form>
+
+    <div class="card result-card">
+      <div class="tag" role="status" aria-live="polite">
+        <span class="tag-hole" aria-hidden="true"></span>
+        <span class="tag-num" id="resNum">—</span>
+        <span class="tag-unit">mg/kg methylxanthines</span>
+      </div>
+      <p class="tag-caption" id="resCap" style="font-weight:600"></p>
+      <div class="result-extra" id="resRows"></div>
+      <p style="font-size:.85rem;color:var(--muted);margin:14px 0 2px">This tool estimates risk — it never clears your dog. When in doubt, call your vet and keep the packaging to hand.</p>
+    </div>
+
+  </div>
+</section>
+
+<article class="article wrap-narrow">
+  <div class="callout" style="border-left-color:var(--danger)"><strong>Seeing symptoms already?</strong> Vomiting, restlessness, racing heart, tremors — stop reading and call your vet or the nearest emergency clinic now. Bring or describe the packaging. Do <strong>not</strong> induce vomiting unless a professional tells you to.</div>
+
+  <h2>Why chocolate is dangerous — and why the type matters</h2>
+  <p>Chocolate contains <strong>methylxanthines</strong> — mostly theobromine, plus caffeine — which dogs metabolize very slowly. The darker and less sweet the chocolate, the more concentrated the danger:</p>
+  <table>
+    <tr><th>Chocolate type</th><th>Methylxanthines (approx.)</th></tr>
+    <tr><td>White chocolate</td><td>~0.1 mg/g — negligible, but fat/sugar can still upset the stomach</td></tr>
+    <tr><td>Milk chocolate</td><td>~2.4 mg/g</td></tr>
+    <tr><td>Dark (45–60%)</td><td>~5.5 mg/g</td></tr>
+    <tr><td>Dark (70–85%)</td><td>~9 mg/g</td></tr>
+    <tr><td>Baking / unsweetened</td><td>~16 mg/g</td></tr>
+    <tr><td>Cocoa powder</td><td>~26 mg/g</td></tr>
+  </table>
+  <p>Risk scales with dose per kilogram of dog, which is why the same bar is a very different event for a Chihuahua and a Labrador. In broad veterinary terms: mild signs (vomiting, diarrhea, restlessness) may appear around <strong>20 mg/kg</strong>, cardiac effects around <strong>40–60 mg/kg</strong>, and seizures above <strong>60 mg/kg</strong>. But individual dogs vary, other health issues change the picture, and estimates of "how much they ate" are usually guesses — all reasons the calculator's answer to borderline cases is always the same: <em>call your vet.</em></p>
+
+  <h2>What to do, step by step</h2>
+  <p><strong>1.</strong> Move the remaining chocolate out of reach (dogs go back for seconds). <strong>2.</strong> Work out type and a generous estimate of the amount — wrappers help. <strong>3.</strong> Run the numbers above. <strong>4.</strong> For anything beyond a clearly trivial dose, or if you're unsure of amount or type, call your vet — they'll weigh the timing, your dog's health and whether inducing vomiting or activated charcoal makes sense. <strong>5.</strong> Watch for symptoms for at least 12 hours; they typically start within 6–12 and can last a day or more.</p>
+  <p>One more villain worth knowing: some chocolate products (and many sugar-free sweets) contain <strong>xylitol</strong>, which is severely toxic to dogs at tiny doses and acts fast. If the label lists xylitol, that's an immediate vet call regardless of what this calculator says about the chocolate itself.</p>
+
+  <div class="callout"><strong>Not veterinary advice.</strong> This tool uses commonly published toxicity thresholds to help you gauge urgency. It cannot examine your dog. Any symptoms, any uncertainty, any dark or baking chocolate in a small dog — call a professional.</div>
+
+  <h2>Frequently asked questions</h2>
+  <details>
+    <summary>My 10 kg dog ate 50 g of milk chocolate — is that dangerous?</summary>
+    <p>That's roughly 12 mg/kg — below the level where signs usually appear, so mild stomach upset is the most common outcome. Monitor closely for 12+ hours and call your vet if any symptoms show or if the amount might have been larger than you think.</p>
+  </details>
+  <details>
+    <summary>How long after eating chocolate do symptoms appear?</summary>
+    <p>Usually within 6–12 hours: vomiting, diarrhea, restlessness and thirst first; racing heart, panting and tremors at higher doses. Because theobromine clears slowly, signs can persist a day or more.</p>
+  </details>
+  <details>
+    <summary>Should I make my dog vomit?</summary>
+    <p>Not on your own. Inducing vomiting is sometimes right and sometimes harmful — it depends on timing, dose and your dog's condition. Call your vet first; if it's warranted, they'll do it safely or tell you exactly how.</p>
+  </details>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <span class="brand foot-brand"><svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="4.6" cy="10" rx="2" ry="2.5"/><ellipse cx="9.4" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="14.6" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="19.4" cy="10" rx="2" ry="2.5"/><path d="M12 11.2c-3.4 0-6.3 2.9-6.3 5.6 0 1.9 1.5 3.2 3.4 3.2 1.1 0 2-.5 2.9-.5s1.8.5 2.9.5c1.9 0 3.4-1.3 3.4-3.2 0-2.7-2.9-5.6-6.3-5.6z"/></svg><span>Kibble<b>Math</b></span></span>
+      <p class="foot-note">Simple, science-backed pet calculators. General information only — always confirm health decisions with your vet.</p>
+    </div>
+    <div>
+      <h3>Dog tools</h3>
+      <ul>
+        <li><a href="/dog-calorie-calculator/">Calorie calculator</a></li>
+        <li><a href="/dog-food-calculator/">Food portion &amp; cost</a></li>
+        <li><a href="/dog-age-calculator/">Age calculator</a></li>
+        <li><a href="/puppy-weight-calculator/">Puppy weight predictor</a></li>
+        <li><a href="/dog-water-calculator/">Water intake</a></li>
+        <li><a href="/dog-pregnancy-calculator/">Pregnancy due date</a></li>
+        <li><a href="/dog-chocolate-toxicity-calculator/">Chocolate toxicity</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Cat tools</h3>
+      <ul>
+        <li><a href="/cat-calorie-calculator/">Calorie calculator</a></li>
+        <li><a href="/cat-age-calculator/">Age calculator</a></li>
+        <li><a href="/cat-food-calculator/">Food portion &amp; cost</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Site</h3>
+      <ul>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/disclaimer/">Disclaimer &amp; disclosures</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap copyright">© 2026 KibbleMath</div>
+</footer>
+
+<script>
+(function(){
+  var w=document.getElementById('w'),type=document.getElementById('type'),
+      amt=document.getElementById('amt'),num=document.getElementById('resNum'),
+      cap=document.getElementById('resCap'),rows=document.getElementById('resRows'),
+      tag=document.querySelector('.tag');
+  var wUnit='kg',aUnit='g';
+
+  function bump(){tag.classList.remove('bump');void tag.offsetWidth;tag.classList.add('bump');}
+
+  function band(d){
+    if(d<20)return{label:'Lower-risk dose \u2014 monitor closely; call your vet if any symptoms or if unsure',danger:false};
+    if(d<40)return{label:'\u26a0 Moderate \u2014 contact your vet now',danger:true};
+    if(d<60)return{label:'\u26a0 High \u2014 contact a vet immediately',danger:true};
+    return{label:'\u26a0 EMERGENCY \u2014 go to an emergency vet now',danger:true};
+  }
+
+  function calc(){
+    var v=parseFloat(w.value),a=parseFloat(amt.value);
+    if(!v||v<=0||isNaN(a)||a<0){num.textContent='—';cap.textContent='Enter weight and amount.';cap.style.color='var(--muted)';rows.innerHTML='';return;}
+    var kg=wUnit==='kg'?v:v/2.20462;
+    var grams=aUnit==='g'?a:a*28.35;
+    var mgpg=parseFloat(type.value);
+    var totalMg=grams*mgpg;
+    var dose=totalMg/kg;
+    num.textContent=dose<10?dose.toFixed(1):Math.round(dose).toLocaleString('en-US');
+    var b=band(dose);
+    cap.textContent=b.label;
+    cap.style.color=b.danger?'var(--danger)':'var(--muted)';
+    rows.innerHTML=
+      '<div class="row"><span>Total methylxanthines</span><span>'+Math.round(totalMg).toLocaleString('en-US')+' mg</span></div>'+
+      '<div class="row"><span>Chocolate potency</span><span>'+mgpg+' mg/g</span></div>'+
+      '<div class="row"><span>Symptom window</span><span>6\u201312 h after eating</span></div>';
+    bump();
+  }
+
+  document.querySelectorAll('.seg-btn[data-u]').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(wUnit===b.dataset.u)return;
+      document.querySelectorAll('.seg-btn[data-u]').forEach(function(x){x.classList.remove('is-on');});
+      b.classList.add('is-on');
+      var v=parseFloat(w.value);if(v>0){w.value=(b.dataset.u==='kg'?v/2.20462:v*2.20462).toFixed(1);}
+      wUnit=b.dataset.u;calc();
+    });
+  });
+  document.querySelectorAll('.seg-btn[data-a]').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(aUnit===b.dataset.a)return;
+      document.querySelectorAll('.seg-btn[data-a]').forEach(function(x){x.classList.remove('is-on');});
+      b.classList.add('is-on');
+      var a=parseFloat(amt.value);if(a>0){amt.value=(b.dataset.a==='g'?a*28.35:a/28.35).toFixed(0);}
+      aUnit=b.dataset.a;calc();
+    });
+  });
+  [w,amt].forEach(function(el){el.addEventListener('input',calc);});
+  type.addEventListener('change',calc);
+  calc();
+})();
+</script>
+</body>
+</html>

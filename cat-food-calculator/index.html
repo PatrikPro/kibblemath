@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dog Food Calculator — Daily Portions in Grams or Cups, Days Per Bag &amp; Cost</title>
-<meta name="description" content="Work out how much to feed your dog per day in grams or cups from the label's kcal per 100 g or kcal per cup — plus how long a bag lasts and what feeding costs per month.">
-<link rel="canonical" href="https://www.kibblemath.com/dog-food-calculator/">
-<meta property="og:title" content="Dog Food Calculator — Portions, Days Per Bag &amp; Cost">
-<meta property="og:description" content="Grams or cups per day from your food's label, plus bag life and monthly cost.">
+<title>Cat Food Calculator — Daily Portions in Grams, Pouches &amp; Monthly Cost</title>
+<meta name="description" content="Work out how much to feed your cat per day — in grams or wet-food pouches — from the label's kcal per 100 g, plus how long a bag lasts and monthly feeding cost.">
+<link rel="canonical" href="https://www.kibblemath.com/cat-food-calculator/">
+<meta property="og:title" content="Cat Food Calculator — Portions, Pouches &amp; Cost">
+<meta property="og:description" content="Grams or pouches per day from your food's label — wet, dry or both.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.kibblemath.com/dog-food-calculator/">
+<meta property="og:url" content="https://www.kibblemath.com/cat-food-calculator/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,9 @@
 <link rel="stylesheet" href="/styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How many grams of food should I feed my dog per day?","acceptedAnswer":{"@type":"Answer","text":"Divide your dog's daily calorie need by the food's energy density. Example: a 20 kg neutered adult needs about 1,060 kcal per day; on a dry food with 370 kcal per 100 g that is roughly 285 g per day, usually split into two meals."}},
-{"@type":"Question","name":"My dog food label shows kJ instead of kcal — how do I convert?","acceptedAnswer":{"@type":"Answer","text":"Divide kilojoules by 4.184 to get kcal. For example, 1,550 kJ per 100 g is about 370 kcal per 100 g. Many EU labels list both; if only kJ is shown, convert before entering it in the calculator."}},
-{"@type":"Question","name":"Why does my bag of dog food run out faster than calculated?","acceptedAnswer":{"@type":"Answer","text":"The usual culprits are scoop drift and treats. Volume scoops routinely over-pour by 10–20%, so weigh portions with a kitchen scale for a week to recalibrate, and remember treats should stay within about 10% of daily calories."}}
+{"@type":"Question","name":"How much wet food should I feed my cat per day?","acceptedAnswer":{"@type":"Answer","text":"Divide your cat's daily calorie need by the food's energy density. A typical 4 kg neutered cat needs about 240 kcal; on wet food at 80 kcal per 100 g that is roughly 300 g per day — about three and a half standard 85 g pouches, if feeding wet only."}},
+{"@type":"Question","name":"How many pouches of cat food per day?","acceptedAnswer":{"@type":"Answer","text":"A standard 85 g pouch typically provides 65–90 kcal. A 4 kg indoor cat needing about 240 kcal would eat roughly 3 pouches daily on wet food alone, or commonly 1–2 pouches plus a measured portion of dry in mixed feeding."}},
+{"@type":"Question","name":"Is wet or dry food better for cats?","acceptedAnswer":{"@type":"Answer","text":"Both can be nutritionally complete. Wet food adds significant water — useful since cats are famously poor drinkers — while dry is convenient and calorie-dense. Many owners mix the two; what matters most is that total daily calories match your cat's needs."}}
 ]}
 </script>
 </head>
@@ -42,8 +42,8 @@
 <main>
 <section class="tool-hero">
   <div class="wrap">
-    <h1>Dog food portion &amp; cost calculator</h1>
-    <p class="lede">Turn your dog's calorie needs into a daily portion from your food's label — in grams or cups — and see how long a bag lasts and what a month of feeding costs.</p>
+    <h1>Cat food portion &amp; cost calculator</h1>
+    <p class="lede">Turn your cat's calorie needs into a daily portion from the label — in grams, cups or wet-food pouches — and see how long a bag lasts and what a month of feeding costs.</p>
   </div>
 </section>
 
@@ -52,9 +52,9 @@
 
     <form class="card form-card" onsubmit="return false">
       <label class="field" for="w">
-        <span class="field-label">Dog's weight</span>
+        <span class="field-label">Cat's weight</span>
         <div class="input-row">
-          <input type="number" id="w" value="20" min="0.5" step="0.1" inputmode="decimal">
+          <input type="number" id="w" value="4" min="0.3" step="0.1" inputmode="decimal">
           <div class="seg" role="group" aria-label="Weight unit">
             <button type="button" class="seg-btn is-on" data-u="kg">kg</button>
             <button type="button" class="seg-btn" data-u="lb">lb</button>
@@ -63,35 +63,33 @@
       </label>
 
       <label class="field" for="stage">
-        <span class="field-label">Life stage &amp; activity</span>
+        <span class="field-label">Life stage &amp; situation</span>
         <select id="stage">
-          <option value="1.6" selected>Neutered adult — typical (× 1.6)</option>
-          <option value="1.8">Intact adult (× 1.8)</option>
-          <option value="1.4">Senior / less active (× 1.4)</option>
-          <option value="1.0">Weight loss — use ideal weight (× 1.0)</option>
-          <option value="3.0">Puppy, under 4 months (× 3.0)</option>
-          <option value="2.0">Puppy, 4–12 months (× 2.0)</option>
-          <option value="2.0">Very active adult (× 2.0)</option>
-          <option value="3.0">Working dog (× 3.0)</option>
+          <option value="1.2" selected>Neutered adult — typical (× 1.2)</option>
+          <option value="1.4">Intact adult (× 1.4)</option>
+          <option value="1.0">Prone to weight gain (× 1.0)</option>
+          <option value="0.8">Weight loss — use ideal weight (× 0.8)</option>
+          <option value="2.5">Kitten, under 4 months (× 2.5)</option>
+          <option value="2.0">Kitten, 4–12 months (× 2.0)</option>
         </select>
       </label>
 
       <label class="field" for="ke">
         <span class="field-label">Food energy (from the label)</span>
         <div class="input-row">
-          <input type="number" id="ke" value="370" min="1" step="1" inputmode="numeric">
+          <input type="number" id="ke" value="375" min="1" step="1" inputmode="numeric">
           <div class="seg" role="group" aria-label="Energy unit">
             <button type="button" class="seg-btn is-on" data-e="g100">kcal/100g</button>
             <button type="button" class="seg-btn" data-e="cup">kcal/cup</button>
           </div>
         </div>
-        <span class="field-hint">EU labels usually show kcal (or kJ) per 100&nbsp;g. If only kJ is listed, divide by 4.184.</span>
+        <span class="field-hint">Dry ≈ 350–420 kcal/100 g; wet ≈ 70–95. If the label shows kJ, divide by 4.184.</span>
       </label>
 
       <label class="field" for="bag">
-        <span class="field-label">Bag size — optional</span>
+        <span class="field-label">Bag or box size — optional</span>
         <div class="input-row">
-          <input type="number" id="bag" value="12" min="0" step="0.1" inputmode="decimal">
+          <input type="number" id="bag" value="2" min="0" step="0.1" inputmode="decimal">
           <span class="seg" style="align-items:center;padding:3px 13px;font-size:.85rem;font-weight:600;color:var(--muted)" id="bagUnit">kg</span>
         </div>
       </label>
@@ -117,31 +115,30 @@
 
 <article class="article wrap-narrow">
   <h2>How this calculator works</h2>
-  <p>It first estimates your dog's daily energy need with the veterinary <a href="/dog-calorie-calculator/">RER method</a> (70 × kg<sup>0.75</sup>, multiplied by a life-stage factor), then divides that by the energy density printed on your food's label.</p>
-  <p>Energy density varies a lot between foods, which is why "one cup, twice a day" advice is nearly meaningless. Typical ranges:</p>
+  <p>It estimates your cat's daily energy need with the veterinary <a href="/cat-calorie-calculator/">RER method</a> (70 × kg<sup>0.75</sup>, times a feline life-stage factor), then divides by the energy density printed on your food's label.</p>
+  <p>Cat feeding has one twist dogs don't: the <strong>enormous gap between wet and dry</strong>. Wet food is mostly water, so the portions look wildly different for the same calories:</p>
   <table>
-    <tr><th>Food type</th><th>Typical energy</th></tr>
-    <tr><td>Dry food (kibble)</td><td>350–420 kcal / 100 g</td></tr>
-    <tr><td>Puppy &amp; performance dry food</td><td>400–450 kcal / 100 g</td></tr>
-    <tr><td>Wet food (cans, pouches)</td><td>80–110 kcal / 100 g</td></tr>
+    <tr><th>Food type</th><th>Typical energy</th><th>~240 kcal looks like</th></tr>
+    <tr><td>Dry food (kibble)</td><td>350–420 kcal / 100 g</td><td>~65 g</td></tr>
+    <tr><td>Wet food (pouches, cans)</td><td>70–95 kcal / 100 g</td><td>~300 g (≈3.5 pouches)</td></tr>
   </table>
-  <p>On EU packaging, look for "metabolisable energy" (ME) in the analytical section — often given in both kJ and kcal per 100 g. US brands typically state kcal per cup instead; the toggle above handles either.</p>
-  <p>Two practical tips that fix most portioning problems: <strong>weigh, don't scoop</strong> (volume scoops over-pour by 10–20% surprisingly consistently), and split the day's amount into two meals for adults, three to four smaller ones for puppies.</p>
+  <p>Most owners mix: a pouch or two of wet plus a measured scoop of dry. That's fine — just run this calculator for each food and make the <em>calories</em> add up to the daily target, not the grams. In mixed feeding, it's the dry food that usually smuggles in the surplus, because 20 g of "just a little kibble" is a tenth of many cats' entire daily budget.</p>
+  <p>Two habits fix most portion drift: <strong>weigh dry food with a kitchen scale</strong> (free-pouring runs 10–20% over), and count treats inside the daily total — a 10% ceiling is a good rule.</p>
 
-  <div class="callout"><strong>Switching foods?</strong> Transition gradually over about 7 days — roughly 25% new food every 2 days — to avoid stomach upsets. And as always, this tool gives starting portions, not a medical feeding plan; confirm anything unusual with your vet.</div>
+  <div class="callout"><strong>Switching foods?</strong> Cats are notorious neophobes — transition over 7–10 days, mixing increasing amounts of the new food. And if your cat <em>stops eating</em> for more than a day, that's a vet call, not a waiting game: fasting is genuinely dangerous for cats. As always, these are starting portions, not a medical plan.</div>
 
   <h2>Frequently asked questions</h2>
   <details>
-    <summary>How many grams a day for a 20 kg dog?</summary>
-    <p>A typical 20 kg neutered adult needs about 1,060 kcal per day. On a 370 kcal/100 g dry food that's roughly 285 g daily — about 140 g per meal, twice a day. More or less active dogs can differ by ±20%.</p>
+    <summary>How many pouches a day for a 4 kg cat?</summary>
+    <p>On wet food alone, about 3 to 3.5 standard 85 g pouches (a typical pouch is 65–90 kcal and a 4 kg neutered cat needs ~240 kcal). In mixed feeding, commonly 1–2 pouches plus a weighed dry portion.</p>
   </details>
   <details>
-    <summary>The label shows kJ, not kcal. What do I enter?</summary>
-    <p>Divide the kJ figure by 4.184. Example: 1,550 kJ/100 g ÷ 4.184 ≈ 370 kcal/100 g. Enter the kcal number with the kcal/100g toggle selected.</p>
+    <summary>The label shows kJ — what do I enter?</summary>
+    <p>Divide the kJ figure by 4.184. Example: 335 kJ/100 g ÷ 4.184 ≈ 80 kcal/100 g. EU wet food labels usually show both.</p>
   </details>
   <details>
-    <summary>Why does my bag run out faster than the calculator says?</summary>
-    <p>Almost always scoop drift or treats. Weigh portions with a kitchen scale for one week to recalibrate your scoop, and keep treats inside ~10% of daily calories — they're part of the budget too.</p>
+    <summary>Why does my cat act starving on the calculated amount?</summary>
+    <p>Neutered indoor cats have modest needs and impressive acting skills. If body condition is good (ribs easy to feel, visible waist), the portion is right. Slow-feeders, puzzle feeders and splitting the day into 3–4 small meals help the amount feel like more.</p>
   </details>
 </article>
 </main>
@@ -193,7 +190,7 @@
       unitEl=document.getElementById('resUnit'),cap=document.getElementById('resCap'),
       rows=document.getElementById('resRows'),tag=document.querySelector('.tag'),
       bagUnit=document.getElementById('bagUnit');
-  var wUnit='kg',eUnit='g100',GRAMS_PER_CUP=105;
+  var wUnit='kg',eUnit='g100',GRAMS_PER_CUP=105,POUCH_G=85;
 
   function fmt(n){return Math.round(n).toLocaleString('en-US');}
   function bump(){tag.classList.remove('bump');void tag.offsetWidth;tag.classList.add('bump');}
@@ -203,19 +200,20 @@
     if(!v||v<=0||!e||e<=0){num.textContent='—';cap.textContent='Enter weight and the food\u2019s energy value.';rows.innerHTML='';return;}
     var kg=wUnit==='kg'?v:v/2.20462;
     var kcal=70*Math.pow(kg,0.75)*parseFloat(stage.value);
-    var gramsDay,cupsDay,html='';
+    var gramsDay,html='';
     if(eUnit==='g100'){
       gramsDay=kcal/e*100;
       num.textContent=fmt(gramsDay);unitEl.textContent='g / day';
       html+='<div class="row"><span>Daily energy target</span><span>'+fmt(kcal)+' kcal</span></div>';
-      html+='<div class="row"><span>Per meal (\u00d7 2)</span><span>'+fmt(gramsDay/2)+' g</span></div>';
+      if(e<=130){html+='<div class="row"><span>In 85 g pouches</span><span>'+(gramsDay/POUCH_G).toFixed(1)+' pouches</span></div>';}
+      else{html+='<div class="row"><span>Per meal (\u00d7 3)</span><span>'+fmt(gramsDay/3)+' g</span></div>';}
     }else{
-      cupsDay=kcal/e;gramsDay=cupsDay*GRAMS_PER_CUP;
+      var cupsDay=kcal/e;gramsDay=cupsDay*GRAMS_PER_CUP;
       num.textContent=cupsDay.toFixed(1);unitEl.textContent='cups / day';
       html+='<div class="row"><span>Daily energy target</span><span>'+fmt(kcal)+' kcal</span></div>';
       html+='<div class="row"><span>Approx. weight (105 g/cup)</span><span>'+fmt(gramsDay)+' g</span></div>';
     }
-    cap.textContent='for a '+v+' '+wUnit+' dog on this food';
+    cap.textContent='for a '+v+' '+wUnit+' cat on this food';
     var b=parseFloat(bag.value);
     if(b>0){
       var bagG=(wUnit==='kg'?b:b/2.20462)*1000;
@@ -245,7 +243,7 @@
       if(eUnit===b.dataset.e)return;
       document.querySelectorAll('.seg-btn[data-e]').forEach(function(x){x.classList.remove('is-on');});
       b.classList.add('is-on');eUnit=b.dataset.e;
-      ke.value=eUnit==='g100'?370:380;
+      ke.value=eUnit==='g100'?375:300;
       calc();
     });
   });

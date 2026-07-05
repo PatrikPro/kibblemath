@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dog Calorie Calculator — How Many Calories Does My Dog Need Per Day?</title>
-<meta name="description" content="Free dog calorie calculator using the veterinary RER formula (70 × kg^0.75) and life-stage factors. Works in kg or lb and shows kcal per day for puppies, adults, seniors and weight loss.">
-<link rel="canonical" href="https://www.kibblemath.com/dog-calorie-calculator/">
-<meta property="og:title" content="Dog Calorie Calculator — kcal Per Day">
-<meta property="og:description" content="Veterinary RER formula with life-stage factors. Metric-first, imperial one tap away.">
+<title>Cat Calorie Calculator — How Many Calories Does My Cat Need Per Day?</title>
+<meta name="description" content="Free cat calorie calculator using the veterinary RER formula (70 × kg^0.75) and feline life-stage factors — for indoor cats, kittens, intact cats and weight loss.">
+<link rel="canonical" href="https://www.kibblemath.com/cat-calorie-calculator/">
+<meta property="og:title" content="Cat Calorie Calculator — kcal Per Day">
+<meta property="og:description" content="The feline RER method with life-stage factors. Metric-first.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.kibblemath.com/dog-calorie-calculator/">
+<meta property="og:url" content="https://www.kibblemath.com/cat-calorie-calculator/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,9 @@
 <link rel="stylesheet" href="/styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How many calories does a dog need per day?","acceptedAnswer":{"@type":"Answer","text":"A common veterinary starting point is Resting Energy Requirement (RER) = 70 × (body weight in kg)^0.75, multiplied by a life-stage factor: roughly 1.6 for a neutered adult, 1.8 for an intact adult, 2.0–3.0 for puppies and 1.0 of ideal weight for weight loss. A 20 kg neutered adult needs about 1,060 kcal per day as a starting point."}},
-{"@type":"Question","name":"Is the calorie number from this calculator exact?","acceptedAnswer":{"@type":"Answer","text":"No — it is a starting point. Individual dogs can need 20% more or less depending on breed, metabolism and activity. Feed the calculated amount, monitor body condition for 2–4 weeks, and adjust. For weight loss, medical conditions or puppies of giant breeds, confirm the plan with your vet."}},
-{"@type":"Question","name":"How do I convert my dog's calories into food portions?","acceptedAnswer":{"@type":"Answer","text":"Find the energy value on your dog food label — in Europe it is usually listed as kcal per 100 g, in the US as kcal per cup. Divide the daily calorie target by that number. Our dog food portion calculator does this for you and also estimates days per bag and monthly cost."}}
+{"@type":"Question","name":"How many calories does a cat need per day?","acceptedAnswer":{"@type":"Answer","text":"Start from Resting Energy Requirement: RER = 70 × (weight in kg)^0.75, then multiply by a feline life-stage factor — about 1.2 for a neutered adult, 1.4 intact, 1.0 for cats prone to weight gain, 0.8 of ideal weight for weight loss, and 2.0–2.5 for kittens. A typical 4 kg neutered indoor cat needs roughly 240 kcal per day."}},
+{"@type":"Question","name":"Why does my cat need fewer calories than the food bag suggests?","acceptedAnswer":{"@type":"Answer","text":"Feeding guides are averages and often generous, while most pet cats are neutered and indoors — the lowest-need group. Calculating from your cat's own weight and life stage is usually closer, and body condition over a few weeks is the final judge."}},
+{"@type":"Question","name":"How many calories for a cat to lose weight?","acceptedAnswer":{"@type":"Answer","text":"A common veterinary starting point is about 0.8 × RER calculated at the cat's ideal weight, aiming for slow loss of roughly 0.5–1% of body weight per week. Weight loss in cats must be gradual — crash dieting risks a serious liver condition — so plan it with your vet."}}
 ]}
 </script>
 </head>
@@ -42,8 +42,8 @@
 <main>
 <section class="tool-hero">
   <div class="wrap">
-    <h1>Dog calorie calculator</h1>
-    <p class="lede">How many kcal your dog needs per day, using the standard veterinary RER formula and a life-stage factor. Adjust to your dog with the guidance below.</p>
+    <h1>Cat calorie calculator</h1>
+    <p class="lede">How many kcal your cat needs per day, using the veterinary RER method and feline life-stage factors — tuned for the reality that most pet cats are neutered, indoors, and excellent at negotiating extra meals.</p>
   </div>
 </section>
 
@@ -52,41 +52,39 @@
 
     <form class="card form-card" onsubmit="return false">
       <label class="field" for="w">
-        <span class="field-label">Dog's weight</span>
+        <span class="field-label">Cat's weight</span>
         <div class="input-row">
-          <input type="number" id="w" value="20" min="0.5" step="0.1" inputmode="decimal">
+          <input type="number" id="w" value="4" min="0.3" step="0.1" inputmode="decimal">
           <div class="seg" role="group" aria-label="Weight unit">
             <button type="button" class="seg-btn is-on" data-u="kg">kg</button>
             <button type="button" class="seg-btn" data-u="lb">lb</button>
           </div>
         </div>
-        <span class="field-hint">For weight loss, enter your dog's <em>ideal</em> weight, not the current one.</span>
+        <span class="field-hint">For weight loss, enter your cat's <em>ideal</em> weight, not the current one.</span>
       </label>
 
       <label class="field" for="stage">
-        <span class="field-label">Life stage &amp; activity</span>
+        <span class="field-label">Life stage &amp; situation</span>
         <select id="stage">
-          <option value="1.6" selected>Neutered adult — typical (× 1.6)</option>
-          <option value="1.8">Intact adult (× 1.8)</option>
-          <option value="1.4">Senior / less active (× 1.4)</option>
-          <option value="1.0">Weight loss — use ideal weight (× 1.0)</option>
-          <option value="3.0" data-l="puppy under 4 months">Puppy, under 4 months (× 3.0)</option>
-          <option value="2.0" data-l="puppy 4–12 months">Puppy, 4–12 months (× 2.0)</option>
-          <option value="2.0" data-l="very active adult">Very active adult (× 2.0)</option>
-          <option value="3.0" data-l="working dog">Working dog (× 3.0)</option>
+          <option value="1.2" selected>Neutered adult — typical (× 1.2)</option>
+          <option value="1.4">Intact adult (× 1.4)</option>
+          <option value="1.0" data-l="indoor cat prone to gaining">Prone to weight gain (× 1.0)</option>
+          <option value="0.8" data-l="weight-loss plan">Weight loss — use ideal weight (× 0.8)</option>
+          <option value="2.5" data-l="kitten under 4 months">Kitten, under 4 months (× 2.5)</option>
+          <option value="2.0" data-l="kitten 4–12 months">Kitten, 4–12 months (× 2.0)</option>
         </select>
       </label>
 
-      <label class="field" for="kcup">
+      <label class="field" for="ke">
         <span class="field-label">Food energy — optional</span>
         <div class="input-row">
-          <input type="number" id="kcup" min="0" step="1" inputmode="numeric" placeholder="e.g. 380">
+          <input type="number" id="ke" min="0" step="1" inputmode="numeric" placeholder="e.g. 375">
           <div class="seg" role="group" aria-label="Energy unit">
-            <button type="button" class="seg-btn is-on" data-e="cup">kcal/cup</button>
-            <button type="button" class="seg-btn" data-e="g100">kcal/100g</button>
+            <button type="button" class="seg-btn is-on" data-e="g100">kcal/100g</button>
+            <button type="button" class="seg-btn" data-e="cup">kcal/cup</button>
           </div>
         </div>
-        <span class="field-hint">From the food label, to convert calories into a portion.</span>
+        <span class="field-hint">From the label, to convert calories into a portion. Dry ≈ 350–420, wet ≈ 70–95 kcal/100 g.</span>
       </label>
     </form>
 
@@ -105,37 +103,36 @@
 
 <article class="article wrap-narrow">
   <h2>How this calculator works</h2>
-  <p>Veterinary nutrition starts from the <strong>Resting Energy Requirement (RER)</strong> — the energy a dog burns at rest in a neutral environment:</p>
+  <p>Feline nutrition uses the same starting point as canine: the <strong>Resting Energy Requirement</strong>,</p>
   <p style="font-family:var(--mono);background:var(--white);border:1.5px solid var(--mist);border-radius:10px;padding:12px 16px">RER = 70 × (body weight in kg)<sup>0.75</sup></p>
-  <p>Daily needs are then estimated by multiplying RER by a <strong>life-stage factor</strong>. These factors are the ranges used in standard veterinary references:</p>
+  <p>multiplied by a <strong>life-stage factor</strong>. Cats' factors run lower than dogs' — a neutered indoor cat simply doesn't burn much:</p>
   <table>
     <tr><th>Life stage</th><th>Factor × RER</th></tr>
-    <tr><td>Puppy under 4 months</td><td>3.0</td></tr>
-    <tr><td>Puppy 4–12 months</td><td>2.0</td></tr>
-    <tr><td>Neutered adult</td><td>1.6</td></tr>
-    <tr><td>Intact adult</td><td>1.8</td></tr>
-    <tr><td>Senior / less active</td><td>1.2–1.4</td></tr>
-    <tr><td>Weight loss (ideal weight)</td><td>1.0</td></tr>
-    <tr><td>Very active / working</td><td>2.0–5.0</td></tr>
+    <tr><td>Kitten, under 4 months</td><td>2.5</td></tr>
+    <tr><td>Kitten, 4–12 months</td><td>2.0</td></tr>
+    <tr><td>Neutered adult</td><td>1.2</td></tr>
+    <tr><td>Intact adult</td><td>1.4</td></tr>
+    <tr><td>Prone to weight gain</td><td>1.0</td></tr>
+    <tr><td>Weight loss (ideal weight)</td><td>0.8</td></tr>
   </table>
-  <p>Two dogs of the same weight can genuinely differ by ±20% or more, so treat the result as a starting ration: feed it consistently for 2–4 weeks, check your dog's body condition (you should feel ribs easily but not see them), and adjust in ~10% steps.</p>
-  <p>Don't forget that treats count. A good rule of thumb is to keep treats under 10% of daily calories — for a 1,000 kcal/day dog, that's a 100 kcal budget.</p>
-  <p>Once you have a kcal target, the <a href="/dog-food-calculator/">food portion &amp; cost calculator</a> converts it into grams or cups of your specific food, and tells you how long a bag will last.</p>
+  <p>For a typical 4 kg neutered cat that lands around <strong>240 kcal a day</strong> — roughly one 85 g wet pouch plus 40 g of dry food, or about 65 g of dry alone. If that sounds less than your cat would vote for: correct. Indoor neutered cats are the lowest-energy group there is, and it's why so many drift upward on the scale.</p>
+  <p>Treats count inside the total. A sensible ceiling is <strong>10% of daily calories</strong> — for a 240 kcal cat that's just ~25 kcal, which a handful of commercial treats can blow past quickly.</p>
+  <p>Once you have the kcal target, the <a href="/cat-food-calculator/">cat food portion calculator</a> converts it into grams, pouches and monthly cost for your specific food.</p>
 
-  <div class="callout"><strong>Not veterinary advice.</strong> This is a general estimate. For puppies of giant breeds, pregnant or nursing dogs, weight-loss plans, or any medical condition, have your vet confirm the feeding plan.</div>
+  <div class="callout"><strong>Weight loss in cats needs a vet.</strong> Cats that lose weight too fast — or stop eating — can develop hepatic lipidosis, a dangerous liver condition. If your cat needs to slim down, do it gradually (0.5–1% of body weight per week) with your vet's guidance. And this tool, as always, gives starting estimates, not medical advice.</div>
 
   <h2>Frequently asked questions</h2>
   <details>
-    <summary>How many calories does a 20 kg (44 lb) dog need?</summary>
-    <p>A typical neutered adult at 20 kg has an RER of about 662 kcal, and a daily need of roughly 1,060 kcal (662 × 1.6). An intact, more active dog of the same weight lands closer to 1,190–1,320 kcal.</p>
+    <summary>How many calories does a 4 kg indoor cat need?</summary>
+    <p>Around 240 kcal per day for a typical neutered adult (RER ≈ 198 × 1.2). Cats prone to gaining may need closer to 200 kcal, intact cats around 275.</p>
   </details>
   <details>
-    <summary>Why does my food bag recommend a different amount?</summary>
-    <p>Feeding guides on bags are averages across many dogs and often run generous. The RER method is individual to your dog's weight and life stage. If the two disagree, start between them and adjust based on body condition over a few weeks.</p>
+    <summary>Why is my cat gaining weight on the bag's recommended amount?</summary>
+    <p>Bag guides are generous averages, and neutered indoor cats need less than average. Recalculate from your cat's weight and life stage, weigh portions with a scale, count treats — then adjust in small steps based on body condition.</p>
   </details>
   <details>
-    <summary>My dog is overweight — do I use current or target weight?</summary>
-    <p>Use the <em>ideal</em> weight with the weight-loss factor (× 1.0). Aim for gradual loss — around 1–2% of body weight per week — and involve your vet, especially for large reductions.</p>
+    <summary>How much should my cat eat to lose weight?</summary>
+    <p>A common starting point is 0.8 × RER at <em>ideal</em> weight, targeting slow loss of 0.5–1% of body weight per week. Because rapid loss is dangerous for cats, build the plan with your vet and recheck weight every couple of weeks.</p>
   </details>
 </article>
 </main>
@@ -182,17 +179,17 @@
 <script>
 (function(){
   var w=document.getElementById('w'),stage=document.getElementById('stage'),
-      kcup=document.getElementById('kcup'),num=document.getElementById('resNum'),
+      ke=document.getElementById('ke'),num=document.getElementById('resNum'),
       cap=document.getElementById('resCap'),rows=document.getElementById('resRows'),
       tag=document.querySelector('.tag');
-  var wUnit='kg',eUnit='cup';
+  var wUnit='kg',eUnit='g100';
 
   function fmt(n){return Math.round(n).toLocaleString('en-US');}
   function bump(){tag.classList.remove('bump');void tag.offsetWidth;tag.classList.add('bump');}
 
   function calc(){
     var v=parseFloat(w.value);
-    if(!v||v<=0){num.textContent='—';cap.textContent='Enter your dog\u2019s weight to see the result.';rows.innerHTML='';return;}
+    if(!v||v<=0){num.textContent='—';cap.textContent='Enter your cat\u2019s weight to see the result.';rows.innerHTML='';return;}
     var kg=wUnit==='kg'?v:v/2.20462;
     var f=parseFloat(stage.value);
     var opt=stage.options[stage.selectedIndex];
@@ -203,14 +200,13 @@
     cap.textContent='for a '+v+' '+wUnit+' '+label;
     var html='<div class="row"><span>Resting energy (RER)</span><span>'+fmt(rer)+' kcal</span></div>'+
              '<div class="row"><span>Life-stage factor</span><span>\u00d7 '+f.toFixed(1)+'</span></div>';
-    var k=parseFloat(kcup.value);
+    var k=parseFloat(ke.value);
     if(k>0){
-      if(eUnit==='cup'){html+='<div class="row"><span>Daily portion</span><span>'+(total/k).toFixed(1)+' cups</span></div>';}
-      else{html+='<div class="row"><span>Daily portion</span><span>'+fmt(total/k*100)+' g</span></div>';}
+      if(eUnit==='g100'){html+='<div class="row"><span>Daily portion</span><span>'+fmt(total/k*100)+' g</span></div>';}
+      else{html+='<div class="row"><span>Daily portion</span><span>'+(total/k).toFixed(1)+' cups</span></div>';}
     }
     html+='<div class="row"><span>Treat budget (10%)</span><span>\u2264 '+fmt(total*0.1)+' kcal</span></div>';
-    rows.innerHTML=html;
-    bump();
+    rows.innerHTML=html;bump();
   }
 
   document.querySelectorAll('.seg-btn[data-u]').forEach(function(b){
@@ -218,8 +214,7 @@
       if(wUnit===b.dataset.u)return;
       document.querySelectorAll('.seg-btn[data-u]').forEach(function(x){x.classList.remove('is-on');});
       b.classList.add('is-on');
-      var v=parseFloat(w.value);
-      if(v>0){w.value=(b.dataset.u==='kg'?v/2.20462:v*2.20462).toFixed(1);}
+      var v=parseFloat(w.value);if(v>0){w.value=(b.dataset.u==='kg'?v/2.20462:v*2.20462).toFixed(1);}
       wUnit=b.dataset.u;calc();
     });
   });
@@ -227,11 +222,11 @@
     b.addEventListener('click',function(){
       document.querySelectorAll('.seg-btn[data-e]').forEach(function(x){x.classList.remove('is-on');});
       b.classList.add('is-on');eUnit=b.dataset.e;
-      kcup.placeholder=eUnit==='cup'?'e.g. 380':'e.g. 370';
+      ke.placeholder=eUnit==='g100'?'e.g. 375':'e.g. 300';
       calc();
     });
   });
-  [w,kcup].forEach(function(el){el.addEventListener('input',calc);});
+  [w,ke].forEach(function(el){el.addEventListener('input',calc);});
   stage.addEventListener('change',calc);
   calc();
 })();
