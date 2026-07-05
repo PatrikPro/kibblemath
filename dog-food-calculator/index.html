@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dog Food Calculator — Daily Portions in Grams or Cups, Days Per Bag &amp; Cost</title>
+<meta name="description" content="Work out how much to feed your dog per day in grams or cups from the label's kcal per 100 g or kcal per cup — plus how long a bag lasts and what feeding costs per month.">
+<link rel="canonical" href="https://REPLACE-DOMAIN.com/dog-food-calculator/">
+<meta property="og:title" content="Dog Food Calculator — Portions, Days Per Bag &amp; Cost">
+<meta property="og:description" content="Grams or cups per day from your food's label, plus bag life and monthly cost.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://REPLACE-DOMAIN.com/dog-food-calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How many grams of food should I feed my dog per day?","acceptedAnswer":{"@type":"Answer","text":"Divide your dog's daily calorie need by the food's energy density. Example: a 20 kg neutered adult needs about 1,060 kcal per day; on a dry food with 370 kcal per 100 g that is roughly 285 g per day, usually split into two meals."}},
+{"@type":"Question","name":"My dog food label shows kJ instead of kcal — how do I convert?","acceptedAnswer":{"@type":"Answer","text":"Divide kilojoules by 4.184 to get kcal. For example, 1,550 kJ per 100 g is about 370 kcal per 100 g. Many EU labels list both; if only kJ is shown, convert before entering it in the calculator."}},
+{"@type":"Question","name":"Why does my bag of dog food run out faster than calculated?","acceptedAnswer":{"@type":"Answer","text":"The usual culprits are scoop drift and treats. Volume scoops routinely over-pour by 10–20%, so weigh portions with a kitchen scale for a week to recalibrate, and remember treats should stay within about 10% of daily calories."}}
+]}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="KibbleMath home">
+      <svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="4.6" cy="10" rx="2" ry="2.5"/><ellipse cx="9.4" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="14.6" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="19.4" cy="10" rx="2" ry="2.5"/><path d="M12 11.2c-3.4 0-6.3 2.9-6.3 5.6 0 1.9 1.5 3.2 3.4 3.2 1.1 0 2-.5 2.9-.5s1.8.5 2.9.5c1.9 0 3.4-1.3 3.4-3.2 0-2.7-2.9-5.6-6.3-5.6z"/></svg>
+      <span>Kibble<b>Math</b></span>
+    </a>
+    <nav class="nav">
+      <a href="/#tools">All tools</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="tool-hero">
+  <div class="wrap">
+    <h1>Dog food portion &amp; cost calculator</h1>
+    <p class="lede">Turn your dog's calorie needs into a daily portion from your food's label — in grams or cups — and see how long a bag lasts and what a month of feeding costs.</p>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="wrap calc-grid">
+
+    <form class="card form-card" onsubmit="return false">
+      <label class="field" for="w">
+        <span class="field-label">Dog's weight</span>
+        <div class="input-row">
+          <input type="number" id="w" value="20" min="0.5" step="0.1" inputmode="decimal">
+          <div class="seg" role="group" aria-label="Weight unit">
+            <button type="button" class="seg-btn is-on" data-u="kg">kg</button>
+            <button type="button" class="seg-btn" data-u="lb">lb</button>
+          </div>
+        </div>
+      </label>
+
+      <label class="field" for="stage">
+        <span class="field-label">Life stage &amp; activity</span>
+        <select id="stage">
+          <option value="1.6" selected>Neutered adult — typical (× 1.6)</option>
+          <option value="1.8">Intact adult (× 1.8)</option>
+          <option value="1.4">Senior / less active (× 1.4)</option>
+          <option value="1.0">Weight loss — use ideal weight (× 1.0)</option>
+          <option value="3.0">Puppy, under 4 months (× 3.0)</option>
+          <option value="2.0">Puppy, 4–12 months (× 2.0)</option>
+          <option value="2.0">Very active adult (× 2.0)</option>
+          <option value="3.0">Working dog (× 3.0)</option>
+        </select>
+      </label>
+
+      <label class="field" for="ke">
+        <span class="field-label">Food energy (from the label)</span>
+        <div class="input-row">
+          <input type="number" id="ke" value="370" min="1" step="1" inputmode="numeric">
+          <div class="seg" role="group" aria-label="Energy unit">
+            <button type="button" class="seg-btn is-on" data-e="g100">kcal/100g</button>
+            <button type="button" class="seg-btn" data-e="cup">kcal/cup</button>
+          </div>
+        </div>
+        <span class="field-hint">EU labels usually show kcal (or kJ) per 100&nbsp;g. If only kJ is listed, divide by 4.184.</span>
+      </label>
+
+      <label class="field" for="bag">
+        <span class="field-label">Bag size — optional</span>
+        <div class="input-row">
+          <input type="number" id="bag" value="12" min="0" step="0.1" inputmode="decimal">
+          <span class="seg" style="align-items:center;padding:3px 13px;font-size:.85rem;font-weight:600;color:var(--muted)" id="bagUnit">kg</span>
+        </div>
+      </label>
+
+      <label class="field" for="price">
+        <span class="field-label">Bag price — optional</span>
+        <input type="number" id="price" min="0" step="0.01" inputmode="decimal" placeholder="in your currency">
+      </label>
+    </form>
+
+    <div class="card result-card">
+      <div class="tag" role="status" aria-live="polite">
+        <span class="tag-hole" aria-hidden="true"></span>
+        <span class="tag-num" id="resNum">—</span>
+        <span class="tag-unit" id="resUnit">g / day</span>
+      </div>
+      <p class="tag-caption" id="resCap"></p>
+      <div class="result-extra" id="resRows"></div>
+    </div>
+
+  </div>
+</section>
+
+<article class="article wrap-narrow">
+  <h2>How this calculator works</h2>
+  <p>It first estimates your dog's daily energy need with the veterinary <a href="/dog-calorie-calculator/">RER method</a> (70 × kg<sup>0.75</sup>, multiplied by a life-stage factor), then divides that by the energy density printed on your food's label.</p>
+  <p>Energy density varies a lot between foods, which is why "one cup, twice a day" advice is nearly meaningless. Typical ranges:</p>
+  <table>
+    <tr><th>Food type</th><th>Typical energy</th></tr>
+    <tr><td>Dry food (kibble)</td><td>350–420 kcal / 100 g</td></tr>
+    <tr><td>Puppy &amp; performance dry food</td><td>400–450 kcal / 100 g</td></tr>
+    <tr><td>Wet food (cans, pouches)</td><td>80–110 kcal / 100 g</td></tr>
+  </table>
+  <p>On EU packaging, look for "metabolisable energy" (ME) in the analytical section — often given in both kJ and kcal per 100 g. US brands typically state kcal per cup instead; the toggle above handles either.</p>
+  <p>Two practical tips that fix most portioning problems: <strong>weigh, don't scoop</strong> (volume scoops over-pour by 10–20% surprisingly consistently), and split the day's amount into two meals for adults, three to four smaller ones for puppies.</p>
+
+  <div class="callout"><strong>Switching foods?</strong> Transition gradually over about 7 days — roughly 25% new food every 2 days — to avoid stomach upsets. And as always, this tool gives starting portions, not a medical feeding plan; confirm anything unusual with your vet.</div>
+
+  <h2>Frequently asked questions</h2>
+  <details>
+    <summary>How many grams a day for a 20 kg dog?</summary>
+    <p>A typical 20 kg neutered adult needs about 1,060 kcal per day. On a 370 kcal/100 g dry food that's roughly 285 g daily — about 140 g per meal, twice a day. More or less active dogs can differ by ±20%.</p>
+  </details>
+  <details>
+    <summary>The label shows kJ, not kcal. What do I enter?</summary>
+    <p>Divide the kJ figure by 4.184. Example: 1,550 kJ/100 g ÷ 4.184 ≈ 370 kcal/100 g. Enter the kcal number with the kcal/100g toggle selected.</p>
+  </details>
+  <details>
+    <summary>Why does my bag run out faster than the calculator says?</summary>
+    <p>Almost always scoop drift or treats. Weigh portions with a kitchen scale for one week to recalibrate your scoop, and keep treats inside ~10% of daily calories — they're part of the budget too.</p>
+  </details>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <span class="brand foot-brand"><svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="4.6" cy="10" rx="2" ry="2.5"/><ellipse cx="9.4" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="14.6" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="19.4" cy="10" rx="2" ry="2.5"/><path d="M12 11.2c-3.4 0-6.3 2.9-6.3 5.6 0 1.9 1.5 3.2 3.4 3.2 1.1 0 2-.5 2.9-.5s1.8.5 2.9.5c1.9 0 3.4-1.3 3.4-3.2 0-2.7-2.9-5.6-6.3-5.6z"/></svg><span>Kibble<b>Math</b></span></span>
+      <p class="foot-note">Simple, science-backed dog calculators. General information only — always confirm health decisions with your vet.</p>
+    </div>
+    <div>
+      <h3>Tools</h3>
+      <ul>
+        <li><a href="/dog-calorie-calculator/">Dog calorie calculator</a></li>
+        <li><a href="/dog-food-calculator/">Food portion &amp; cost</a></li>
+        <li><a href="/dog-age-calculator/">Dog age calculator</a></li>
+        <li><a href="/puppy-weight-calculator/">Puppy weight predictor</a></li>
+        <li><a href="/dog-water-calculator/">Water intake</a></li>
+        <li><a href="/dog-pregnancy-calculator/">Pregnancy due date</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Site</h3>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/disclaimer/">Disclaimer &amp; disclosures</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap copyright">© 2026 KibbleMath</div>
+</footer>
+
+<script>
+(function(){
+  var w=document.getElementById('w'),stage=document.getElementById('stage'),
+      ke=document.getElementById('ke'),bag=document.getElementById('bag'),
+      price=document.getElementById('price'),num=document.getElementById('resNum'),
+      unitEl=document.getElementById('resUnit'),cap=document.getElementById('resCap'),
+      rows=document.getElementById('resRows'),tag=document.querySelector('.tag'),
+      bagUnit=document.getElementById('bagUnit');
+  var wUnit='kg',eUnit='g100',GRAMS_PER_CUP=105;
+
+  function fmt(n){return Math.round(n).toLocaleString('en-US');}
+  function bump(){tag.classList.remove('bump');void tag.offsetWidth;tag.classList.add('bump');}
+
+  function calc(){
+    var v=parseFloat(w.value),e=parseFloat(ke.value);
+    if(!v||v<=0||!e||e<=0){num.textContent='—';cap.textContent='Enter weight and the food\u2019s energy value.';rows.innerHTML='';return;}
+    var kg=wUnit==='kg'?v:v/2.20462;
+    var kcal=70*Math.pow(kg,0.75)*parseFloat(stage.value);
+    var gramsDay,cupsDay,html='';
+    if(eUnit==='g100'){
+      gramsDay=kcal/e*100;
+      num.textContent=fmt(gramsDay);unitEl.textContent='g / day';
+      html+='<div class="row"><span>Daily energy target</span><span>'+fmt(kcal)+' kcal</span></div>';
+      html+='<div class="row"><span>Per meal (\u00d7 2)</span><span>'+fmt(gramsDay/2)+' g</span></div>';
+    }else{
+      cupsDay=kcal/e;gramsDay=cupsDay*GRAMS_PER_CUP;
+      num.textContent=cupsDay.toFixed(1);unitEl.textContent='cups / day';
+      html+='<div class="row"><span>Daily energy target</span><span>'+fmt(kcal)+' kcal</span></div>';
+      html+='<div class="row"><span>Approx. weight (105 g/cup)</span><span>'+fmt(gramsDay)+' g</span></div>';
+    }
+    cap.textContent='for a '+v+' '+wUnit+' dog on this food';
+    var b=parseFloat(bag.value);
+    if(b>0){
+      var bagG=(wUnit==='kg'?b:b/2.20462)*1000;
+      var days=bagG/gramsDay;
+      html+='<div class="row"><span>One bag lasts</span><span>'+(days>=20?fmt(days):days.toFixed(1))+' days</span></div>';
+      var p=parseFloat(price.value);
+      if(p>0){
+        html+='<div class="row"><span>Cost per day</span><span>'+(p/days).toFixed(2)+'</span></div>';
+        html+='<div class="row"><span>Cost per month</span><span>'+(p/days*30.4).toFixed(0)+'</span></div>';
+      }
+    }
+    rows.innerHTML=html;bump();
+  }
+
+  document.querySelectorAll('.seg-btn[data-u]').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(wUnit===b.dataset.u)return;
+      document.querySelectorAll('.seg-btn[data-u]').forEach(function(x){x.classList.remove('is-on');});
+      b.classList.add('is-on');
+      var v=parseFloat(w.value);if(v>0){w.value=(b.dataset.u==='kg'?v/2.20462:v*2.20462).toFixed(1);}
+      var bv=parseFloat(bag.value);if(bv>0){bag.value=(b.dataset.u==='kg'?bv/2.20462:bv*2.20462).toFixed(1);}
+      wUnit=b.dataset.u;bagUnit.textContent=wUnit;calc();
+    });
+  });
+  document.querySelectorAll('.seg-btn[data-e]').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(eUnit===b.dataset.e)return;
+      document.querySelectorAll('.seg-btn[data-e]').forEach(function(x){x.classList.remove('is-on');});
+      b.classList.add('is-on');eUnit=b.dataset.e;
+      ke.value=eUnit==='g100'?370:380;
+      calc();
+    });
+  });
+  [w,ke,bag,price].forEach(function(el){el.addEventListener('input',calc);});
+  stage.addEventListener('change',calc);
+  calc();
+})();
+</script>
+</body>
+</html>

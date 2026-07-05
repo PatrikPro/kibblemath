@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dog Water Intake Calculator — How Much Water Does My Dog Need Per Day?</title>
+<meta name="description" content="Calculate your dog's daily water needs from the 40–70 ml per kg guideline, adjusted for heat and activity. Results in ml, cups and fl oz, plus dehydration warning signs.">
+<link rel="canonical" href="https://REPLACE-DOMAIN.com/dog-water-calculator/">
+<meta property="og:title" content="Dog Water Intake Calculator">
+<meta property="og:description" content="Daily hydration target in ml and cups, adjusted for heat and activity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://REPLACE-DOMAIN.com/dog-water-calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How much water should a dog drink per day?","acceptedAnswer":{"@type":"Answer","text":"A healthy adult dog typically drinks about 40–70 ml of water per kg of body weight per day — roughly 1 oz per lb. A 20 kg dog therefore needs around 1.1 litres daily, more in hot weather or after exercise."}},
+{"@type":"Question","name":"Does wet food count toward my dog's water intake?","acceptedAnswer":{"@type":"Answer","text":"Yes — wet food is around 75–80% moisture, so dogs on wet diets visibly drink less from the bowl. Dogs on dry kibble (about 8–10% moisture) get almost all their water by drinking."}},
+{"@type":"Question","name":"My dog suddenly drinks much more than usual — is that a problem?","acceptedAnswer":{"@type":"Answer","text":"A sudden, sustained increase in thirst without an obvious cause like heat or exercise can be an early sign of conditions such as diabetes or kidney disease, and is worth a vet visit. Never restrict water to manage the symptom."}}
+]}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="KibbleMath home">
+      <svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="4.6" cy="10" rx="2" ry="2.5"/><ellipse cx="9.4" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="14.6" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="19.4" cy="10" rx="2" ry="2.5"/><path d="M12 11.2c-3.4 0-6.3 2.9-6.3 5.6 0 1.9 1.5 3.2 3.4 3.2 1.1 0 2-.5 2.9-.5s1.8.5 2.9.5c1.9 0 3.4-1.3 3.4-3.2 0-2.7-2.9-5.6-6.3-5.6z"/></svg>
+      <span>Kibble<b>Math</b></span>
+    </a>
+    <nav class="nav">
+      <a href="/#tools">All tools</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="tool-hero">
+  <div class="wrap">
+    <h1>Dog water intake calculator</h1>
+    <p class="lede">A daily hydration target based on the standard 40–70 ml per kg guideline, adjusted for weather and activity — plus the warning signs worth knowing.</p>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="wrap calc-grid">
+
+    <form class="card form-card" onsubmit="return false">
+      <label class="field" for="w">
+        <span class="field-label">Dog's weight</span>
+        <div class="input-row">
+          <input type="number" id="w" value="20" min="0.5" step="0.1" inputmode="decimal">
+          <div class="seg" role="group" aria-label="Weight unit">
+            <button type="button" class="seg-btn is-on" data-u="kg">kg</button>
+            <button type="button" class="seg-btn" data-u="lb">lb</button>
+          </div>
+        </div>
+      </label>
+
+      <label class="field" for="cond">
+        <span class="field-label">Conditions today</span>
+        <select id="cond">
+          <option value="1" selected>Typical day (× 1.0)</option>
+          <option value="1.25">Hot weather or lots of exercise (× 1.25)</option>
+          <option value="1.5">Hot weather and very active (× 1.5)</option>
+        </select>
+      </label>
+    </form>
+
+    <div class="card result-card">
+      <div class="tag" role="status" aria-live="polite">
+        <span class="tag-hole" aria-hidden="true"></span>
+        <span class="tag-num" id="resNum">—</span>
+        <span class="tag-unit">ml / day</span>
+      </div>
+      <p class="tag-caption" id="resCap"></p>
+      <div class="result-extra" id="resRows"></div>
+    </div>
+
+  </div>
+</section>
+
+<article class="article wrap-narrow">
+  <h2>How much water dogs actually need</h2>
+  <p>The commonly used veterinary guideline is <strong>40–70 ml of water per kg of body weight per day</strong> (roughly 1 US fl oz per lb). This calculator uses 55 ml/kg as the midpoint and scales it for heat and exercise — hard play on a summer day can push needs up by half.</p>
+  <p>Diet matters too: wet food is ~75–80% water, so a dog on cans drinks noticeably less from the bowl, while a kibble-fed dog gets nearly everything by drinking. Both can be perfectly hydrated.</p>
+  <p>Rather than measuring every day, it's most useful to <strong>learn your dog's normal</strong> — fill the bowl to the same line each morning for a week — so that a real change stands out.</p>
+  <h3>Signs of dehydration</h3>
+  <p>Tacky or dry gums, skin that's slow to spring back when gently lifted at the shoulders, lethargy and sunken-looking eyes are the classic signs. Offer water and shade; if signs don't improve quickly, or there's vomiting or heat exposure involved, contact your vet.</p>
+  <h3>When <em>more</em> thirst is the red flag</h3>
+  <p>A sudden, sustained jump in drinking (and urination) without an obvious reason is one of the most useful early symptoms dogs give us — it can point to diabetes, kidney issues or hormonal disease. That pattern is worth a vet visit, and water should never be restricted to "fix" it.</p>
+
+  <div class="callout"><strong>Not veterinary advice.</strong> Targets here are general guidelines for healthy dogs. Puppies, nursing mothers and dogs with medical conditions have different needs — ask your vet.</div>
+
+  <h2>Frequently asked questions</h2>
+  <details>
+    <summary>How much water does a 20 kg dog need per day?</summary>
+    <p>Around 1.1 litres on a typical day (55 ml × 20 kg), with a normal range of roughly 0.8–1.4 litres. On a hot, active day it can reasonably reach 1.6 litres or more.</p>
+  </details>
+  <details>
+    <summary>Does wet food count toward water intake?</summary>
+    <p>Yes. At ~75–80% moisture, a 400 g portion of wet food delivers around 300 ml of water. Dogs on wet diets drinking little from the bowl is usually normal, not a problem.</p>
+  </details>
+  <details>
+    <summary>My dog drinks a lot more than the calculator says. Should I worry?</summary>
+    <p>If it's consistent for your dog and matches heat, exercise or a wet-to-dry food switch, it's usually fine. If it's a sudden and sustained change with no clear cause, book a vet check — and keep water freely available in the meantime.</p>
+  </details>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <span class="brand foot-brand"><svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="4.6" cy="10" rx="2" ry="2.5"/><ellipse cx="9.4" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="14.6" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="19.4" cy="10" rx="2" ry="2.5"/><path d="M12 11.2c-3.4 0-6.3 2.9-6.3 5.6 0 1.9 1.5 3.2 3.4 3.2 1.1 0 2-.5 2.9-.5s1.8.5 2.9.5c1.9 0 3.4-1.3 3.4-3.2 0-2.7-2.9-5.6-6.3-5.6z"/></svg><span>Kibble<b>Math</b></span></span>
+      <p class="foot-note">Simple, science-backed dog calculators. General information only — always confirm health decisions with your vet.</p>
+    </div>
+    <div>
+      <h3>Tools</h3>
+      <ul>
+        <li><a href="/dog-calorie-calculator/">Dog calorie calculator</a></li>
+        <li><a href="/dog-food-calculator/">Food portion &amp; cost</a></li>
+        <li><a href="/dog-age-calculator/">Dog age calculator</a></li>
+        <li><a href="/puppy-weight-calculator/">Puppy weight predictor</a></li>
+        <li><a href="/dog-water-calculator/">Water intake</a></li>
+        <li><a href="/dog-pregnancy-calculator/">Pregnancy due date</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Site</h3>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/disclaimer/">Disclaimer &amp; disclosures</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap copyright">© 2026 KibbleMath</div>
+</footer>
+
+<script>
+(function(){
+  var w=document.getElementById('w'),cond=document.getElementById('cond'),
+      num=document.getElementById('resNum'),cap=document.getElementById('resCap'),
+      rows=document.getElementById('resRows'),tag=document.querySelector('.tag');
+  var wUnit='kg';
+
+  function fmt(n){return Math.round(n).toLocaleString('en-US');}
+  function bump(){tag.classList.remove('bump');void tag.offsetWidth;tag.classList.add('bump');}
+
+  function calc(){
+    var v=parseFloat(w.value);
+    if(!v||v<=0){num.textContent='—';cap.textContent='Enter your dog\u2019s weight.';rows.innerHTML='';return;}
+    var kg=wUnit==='kg'?v:v/2.20462;
+    var m=parseFloat(cond.value);
+    var mid=55*kg*m,lo=40*kg*m,hi=70*kg*m;
+    num.textContent=fmt(mid);
+    cap.textContent='for a '+v+' '+wUnit+' dog \u00b7 normal range '+fmt(lo)+'\u2013'+fmt(hi)+' ml';
+    var html='<div class="row"><span>In cups (240 ml)</span><span>'+(mid/240).toFixed(1)+' cups</span></div>'+
+             '<div class="row"><span>In US fl oz</span><span>'+fmt(mid/29.5735)+' fl oz</span></div>'+
+             '<div class="row"><span>Roughly per hour awake</span><span>'+fmt(mid/14)+' ml</span></div>';
+    rows.innerHTML=html;bump();
+  }
+
+  document.querySelectorAll('.seg-btn[data-u]').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(wUnit===b.dataset.u)return;
+      document.querySelectorAll('.seg-btn[data-u]').forEach(function(x){x.classList.remove('is-on');});
+      b.classList.add('is-on');
+      var v=parseFloat(w.value);if(v>0){w.value=(b.dataset.u==='kg'?v/2.20462:v*2.20462).toFixed(1);}
+      wUnit=b.dataset.u;calc();
+    });
+  });
+  w.addEventListener('input',calc);
+  cond.addEventListener('change',calc);
+  calc();
+})();
+</script>
+</body>
+</html>

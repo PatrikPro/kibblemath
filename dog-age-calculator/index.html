@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dog Age Calculator — Dog Years to Human Years (Size-Adjusted &amp; Science-Based)</title>
+<meta name="description" content="Convert dog years to human years two ways: the size-adjusted veterinary chart and the 2020 epigenetic-clock formula (16 × ln(age) + 31). See your dog's life stage instantly.">
+<link rel="canonical" href="https://REPLACE-DOMAIN.com/dog-age-calculator/">
+<meta property="og:title" content="Dog Age Calculator — Dog Years to Human Years">
+<meta property="og:description" content="Size-adjusted chart plus the epigenetic-clock formula, side by side.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://REPLACE-DOMAIN.com/dog-age-calculator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is one dog year really seven human years?","acceptedAnswer":{"@type":"Answer","text":"No — that old rule is inaccurate. Dogs mature very fast early on (the first year equals roughly 15 human years) and then age at a rate that depends on their size, with small breeds aging about 4 human years per dog year and giant breeds around 7–8."}},
+{"@type":"Question","name":"What is the scientific formula for dog age in human years?","acceptedAnswer":{"@type":"Answer","text":"A 2020 study of DNA methylation in Labrador Retrievers proposed: human age = 16 × ln(dog age in years) + 31. It matches biology well for early and mid life but was derived from one breed, so size-adjusted charts remain a useful cross-check."}},
+{"@type":"Question","name":"When is a dog considered a senior?","acceptedAnswer":{"@type":"Answer","text":"It depends on size: giant breeds are often considered seniors from about 6–7 years, large breeds from 8, medium from 9, and small breeds from about 10–11 years. Senior status is a cue for more frequent vet checks, not a fixed switch."}}
+]}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="KibbleMath home">
+      <svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="4.6" cy="10" rx="2" ry="2.5"/><ellipse cx="9.4" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="14.6" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="19.4" cy="10" rx="2" ry="2.5"/><path d="M12 11.2c-3.4 0-6.3 2.9-6.3 5.6 0 1.9 1.5 3.2 3.4 3.2 1.1 0 2-.5 2.9-.5s1.8.5 2.9.5c1.9 0 3.4-1.3 3.4-3.2 0-2.7-2.9-5.6-6.3-5.6z"/></svg>
+      <span>Kibble<b>Math</b></span>
+    </a>
+    <nav class="nav">
+      <a href="/#tools">All tools</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="tool-hero">
+  <div class="wrap">
+    <h1>Dog age calculator</h1>
+    <p class="lede">Your dog's age in human years — the size-adjusted way vets think about it, with the 2020 epigenetic-clock formula alongside for comparison.</p>
+  </div>
+</section>
+
+<section class="calc-section">
+  <div class="wrap calc-grid">
+
+    <form class="card form-card" onsubmit="return false">
+      <label class="field" for="age">
+        <span class="field-label">Dog's age (years)</span>
+        <input type="number" id="age" value="5" min="0.1" max="25" step="0.1" inputmode="decimal">
+        <span class="field-hint">Use decimals for puppies — e.g. 0.5 for six months.</span>
+      </label>
+
+      <label class="field" for="size">
+        <span class="field-label">Size class (adult weight)</span>
+        <select id="size">
+          <option value="small">Small — under 10 kg / 22 lb</option>
+          <option value="medium" selected>Medium — 10–25 kg / 22–55 lb</option>
+          <option value="large">Large — 25–40 kg / 55–90 lb</option>
+          <option value="giant">Giant — over 40 kg / 90 lb</option>
+        </select>
+      </label>
+    </form>
+
+    <div class="card result-card">
+      <div class="tag" role="status" aria-live="polite">
+        <span class="tag-hole" aria-hidden="true"></span>
+        <span class="tag-num" id="resNum">—</span>
+        <span class="tag-unit">human years</span>
+      </div>
+      <p class="tag-caption" id="resCap"></p>
+      <div class="result-extra" id="resRows"></div>
+    </div>
+
+  </div>
+</section>
+
+<article class="article wrap-narrow">
+  <h2>How dog age conversion actually works</h2>
+  <p>The famous "multiply by seven" rule is neat, memorable — and wrong. Dogs sprint through development early: a one-year-old dog is roughly a 15-year-old human, and a two-year-old is around 24. After that, aging speed depends heavily on size — unusually among mammals, <em>bigger</em> dogs age faster.</p>
+  <p>This calculator's main result uses the size-adjusted chart method common in veterinary references:</p>
+  <table>
+    <tr><th>Dog's age</th><th>Small</th><th>Medium</th><th>Large</th><th>Giant</th></tr>
+    <tr><td>1 year</td><td>15</td><td>15</td><td>15</td><td>15</td></tr>
+    <tr><td>2 years</td><td>24</td><td>24</td><td>24</td><td>24</td></tr>
+    <tr><td>Each year after</td><td>+4</td><td>+5</td><td>+6</td><td>+7.5</td></tr>
+  </table>
+  <p>The second number shown is the <strong>epigenetic clock</strong>: in 2020, researchers compared DNA methylation patterns in Labrador Retrievers and humans and derived the formula <span style="font-family:var(--mono)">human&nbsp;age = 16 × ln(dog&nbsp;age) + 31</span>. It captures the fast-early, slow-late shape of dog aging well — but it was built from a single breed, which is why we show both numbers rather than pretending one is exact.</p>
+  <p>Whichever number you prefer, the useful takeaway is your dog's <strong>life stage</strong> — puppy, adult or senior — because that's what should drive food choice (see our <a href="/dog-calorie-calculator/">calorie calculator</a>), exercise style and how often you book vet check-ups.</p>
+
+  <h2>Frequently asked questions</h2>
+  <details>
+    <summary>Is one dog year really seven human years?</summary>
+    <p>No. The 7:1 rule underestimates how fast puppies mature and ignores size entirely. The first dog year is worth roughly 15 human years, and each later year is worth 4 to 8 depending on breed size.</p>
+  </details>
+  <details>
+    <summary>Why do large dogs age faster than small ones?</summary>
+    <p>It's one of biology's odd inversions — across species, bigger animals live longer, but within dogs, selective breeding for size came with faster cellular aging and earlier onset of age-related disease. A Great Dane is a senior around 6–7; a Chihuahua often not until 10–11.</p>
+  </details>
+  <details>
+    <summary>When should I switch to senior dog food or senior vet checks?</summary>
+    <p>Use size as the guide: giant breeds around 6–7 years, large around 8, medium around 9, small around 10–11. Many vets recommend twice-yearly checks from senior age onward — worth discussing at your next visit.</p>
+  </details>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <span class="brand foot-brand"><svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="4.6" cy="10" rx="2" ry="2.5"/><ellipse cx="9.4" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="14.6" cy="6.8" rx="2.1" ry="2.7"/><ellipse cx="19.4" cy="10" rx="2" ry="2.5"/><path d="M12 11.2c-3.4 0-6.3 2.9-6.3 5.6 0 1.9 1.5 3.2 3.4 3.2 1.1 0 2-.5 2.9-.5s1.8.5 2.9.5c1.9 0 3.4-1.3 3.4-3.2 0-2.7-2.9-5.6-6.3-5.6z"/></svg><span>Kibble<b>Math</b></span></span>
+      <p class="foot-note">Simple, science-backed dog calculators. General information only — always confirm health decisions with your vet.</p>
+    </div>
+    <div>
+      <h3>Tools</h3>
+      <ul>
+        <li><a href="/dog-calorie-calculator/">Dog calorie calculator</a></li>
+        <li><a href="/dog-food-calculator/">Food portion &amp; cost</a></li>
+        <li><a href="/dog-age-calculator/">Dog age calculator</a></li>
+        <li><a href="/puppy-weight-calculator/">Puppy weight predictor</a></li>
+        <li><a href="/dog-water-calculator/">Water intake</a></li>
+        <li><a href="/dog-pregnancy-calculator/">Pregnancy due date</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Site</h3>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/disclaimer/">Disclaimer &amp; disclosures</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap copyright">© 2026 KibbleMath</div>
+</footer>
+
+<script>
+(function(){
+  var age=document.getElementById('age'),size=document.getElementById('size'),
+      num=document.getElementById('resNum'),cap=document.getElementById('resCap'),
+      rows=document.getElementById('resRows'),tag=document.querySelector('.tag');
+  var perYear={small:4,medium:5,large:6,giant:7.5};
+  var seniorAt={small:10,medium:9,large:8,giant:6.5};
+
+  function chartAge(a,s){
+    if(a<=1)return 15*a;
+    if(a<=2)return 15+9*(a-1);
+    return 24+perYear[s]*(a-2);
+  }
+  function bump(){tag.classList.remove('bump');void tag.offsetWidth;tag.classList.add('bump');}
+
+  function calc(){
+    var a=parseFloat(age.value),s=size.value;
+    if(!a||a<=0){num.textContent='—';cap.textContent='Enter your dog\u2019s age.';rows.innerHTML='';return;}
+    var chart=chartAge(a,s);
+    num.textContent=Math.round(chart);
+    cap.textContent='size-adjusted chart method \u00b7 '+s+' breed';
+    var stageLabel=a<1?'Puppy':(a>=seniorAt[s]?'Senior':'Adult');
+    var html='<div class="row"><span>Life stage</span><span>'+stageLabel+'</span></div>';
+    if(a>=0.15){
+      var epi=16*Math.log(a)+31;
+      html+='<div class="row"><span>Epigenetic clock (2020 study)</span><span>'+Math.round(epi)+' human yrs</span></div>';
+    }
+    html+='<div class="row"><span>Senior from (this size)</span><span>~'+seniorAt[s]+' dog yrs</span></div>';
+    rows.innerHTML=html;bump();
+  }
+
+  age.addEventListener('input',calc);
+  size.addEventListener('change',calc);
+  calc();
+})();
+</script>
+</body>
+</html>
