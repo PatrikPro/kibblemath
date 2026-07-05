@@ -1,7 +1,9 @@
-# KibbleMath — launch guide
+# KibbleMath — dog calculators
 
 A static, dependency-free site: 6 dog calculators + info pages. No build step,
 no backend, nothing to maintain. Hosting is free; your only cost is the domain.
+
+**Live at:** https://kibblemath.com
 
 ## Preview locally (optional)
     cd kibblemath

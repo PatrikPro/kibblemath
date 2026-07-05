@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://REPLACE-DOMAIN.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://REPLACE-DOMAIN.com/dog-calorie-calculator/</loc><priority>0.9</priority></url>
-  <url><loc>https://REPLACE-DOMAIN.com/dog-food-calculator/</loc><priority>0.9</priority></url>
-  <url><loc>https://REPLACE-DOMAIN.com/dog-age-calculator/</loc><priority>0.9</priority></url>
-  <url><loc>https://REPLACE-DOMAIN.com/puppy-weight-calculator/</loc><priority>0.9</priority></url>
-  <url><loc>https://REPLACE-DOMAIN.com/dog-water-calculator/</loc><priority>0.8</priority></url>
-  <url><loc>https://REPLACE-DOMAIN.com/dog-pregnancy-calculator/</loc><priority>0.8</priority></url>
-  <url><loc>https://REPLACE-DOMAIN.com/about/</loc><priority>0.4</priority></url>
+  <url><loc>https://kibblemath.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://kibblemath.com/dog-calorie-calculator/</loc><priority>0.9</priority></url>
+  <url><loc>https://kibblemath.com/dog-food-calculator/</loc><priority>0.9</priority></url>
+  <url><loc>https://kibblemath.com/dog-age-calculator/</loc><priority>0.9</priority></url>
+  <url><loc>https://kibblemath.com/puppy-weight-calculator/</loc><priority>0.9</priority></url>
+  <url><loc>https://kibblemath.com/dog-water-calculator/</loc><priority>0.8</priority></url>
+  <url><loc>https://kibblemath.com/dog-pregnancy-calculator/</loc><priority>0.8</priority></url>
+  <url><loc>https://kibblemath.com/about/</loc><priority>0.4</priority></url>
 </urlset>
