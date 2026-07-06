@@ -174,3 +174,10 @@ details p{margin-top:0;padding-bottom:14px;color:var(--ink)}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
 }
+
+/* Language switcher */
+.lang{display:flex;gap:10px;margin-left:18px}
+.lang a{color:#fff;opacity:.55;text-decoration:none;font-weight:700;font-size:.78rem;letter-spacing:.06em}
+.lang a:hover{opacity:1}
+.lang a.on{opacity:1;color:var(--brass)}
+@media (max-width:560px){.lang{margin-left:10px;gap:7px}}
